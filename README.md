@@ -42,6 +42,8 @@
 <P>Whenever you close and open your game, the settings will jump back to the default settings</P>
 <P>To change the default settings, open the file: Data/Scripts/998_mods/002_BB_ModMenu/006_Mods/001_Mod_Menu_Cheats_Settings.rb with your Texteditor of choice (Windows Notepad for example) and change the setting from "= false" to "= true"</P>
 
+![infiniteFusionModMenu-ezgif com-crop](https://github.com/BuezliBueb/BB-s-Infinite-Fusion-Quality-of-Life-Cheats/assets/164735539/5b49ac38-c88d-4f20-83b9-b7d39bd1538d)
+
 ## Installing/Uninstalling:
 <p>Just drag the Data folder into you Folder where Game.exe is located</p>
 <p>To Uninstall remove the files:</p>
