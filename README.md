@@ -16,7 +16,8 @@
   <li>100% Catch Rate. (Needs to be active before entering Battle)</li>
   <li>Debugger (Magic Boots) enables the Original Debug Menu without having to get the Magic Boots</li>
   <li> <details>
-    <summary>Startepack adds a bunch of Items to your Bag</summary>
+    <summary>Startepack adds a bunch of Items to your Bag.</summary>
+    <p>Either choose what you want to add individualy or choose the option Startepack Full to get all Items in the list below</p>
   <ul>
     <li>999 Rare Candies</li>
     <li>999 Poké/Great/Ultra/Quickballs</li>
