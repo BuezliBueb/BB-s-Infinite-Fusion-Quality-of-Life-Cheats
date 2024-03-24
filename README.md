@@ -38,5 +38,5 @@
 
 
 ## Installing/Uninstalling:
-Just drag the Data folder into you Folder where Game.exe is located
-To Uninstall remove the file Data/Scripts/998_mods/002_BB_ModMenu/006_Mods/006_Mod_Menu_Cheats.rb
+<p>Just drag the Data folder into you Folder where Game.exe is located</p>
+<p>To Uninstall remove the file Data/Scripts/998_mods/002_BB_ModMenu/006_Mods/006_Mod_Menu_Cheats.rb</p>
