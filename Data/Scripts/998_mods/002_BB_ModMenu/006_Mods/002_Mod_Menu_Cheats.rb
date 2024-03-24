@@ -59,10 +59,14 @@ ModMenuCommands.register("debugger",{
     $DEBUG = !$DEBUG
   }
   })
-
-  ModMenuCommands.register("starterpack",{
-      "parent"      => "cheats",
-      "name"        => _INTL("Startepack"),
+ModMenuCommands.register("starterpack",{
+  "parent"      => "cheats",
+  "name"        => _INTL("Starterpack"),
+  "description" => _INTL("Add some Starting Items to your Bag"),
+})
+  ModMenuCommands.register("starterpackall",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Startepack Full"),
       "description" => _INTL("Adds Rarecandy, Balls, Repel, Evo Items and other Usefull Items to your bag"),
       "effect"      => proc{
         pbPlayDecisionSE
@@ -70,7 +74,119 @@ ModMenuCommands.register("debugger",{
         [:ULTRABALL, 999], [:MAXREPEL, 999], [:TELEPORTER, 1], [:LANTERN, 1], [:WATERSTONE, 10],
         [:LEAFSTONE, 10], [:SUNSTONE, 10], [:MOONSTONE, 10], [:THUNDERSTONE, 10], [:FIRESTONE, 10],
         [:DAWNSTONE, 10], [:SHINYSTONE, 10], [:MAGNETSTONE, 10], [:ITEMFINDER, 1], [:ESCAPEROPE, 100],
-        [:SOOTHEBELL, 10], [:PPMAX, 10], [:DOWSINGMACHINE, 10], [:INFINITEREVERSERS, 1], [:INFINITESPLICERS, 100]]
+        [:SOOTHEBELL, 10], [:PPMAX, 10], [:INFINITEREVERSERS, 1], [:INFINITESPLICERS, 1]]
+        for item, count in itemHash
+          $PokemonBag.pbStoreItem(item, count - pbQuantity(item))
+        end
+      }
+})
+  ModMenuCommands.register("starterpackRC",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Rarecandy"),
+      "description" => _INTL("Adds Rarecandy to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:RARECANDY, 999 - pbQuantity(item))
+      }
+})
+	ModMenuCommands.register("starterpackballs",{
+	  "parent"      => "starterpack",
+	  "name"        => _INTL("Pokeballs"),
+	  "description" => _INTL("Choose what Balls added to your Bag"),
+	})
+	ModMenuCommands.register("starterpackall",{
+		  "parent"      => "starterpackballs",
+		  "name"        => _INTL("All"),
+		  "description" => _INTL("Adds Pokeballs, Greatballs, Ultraballs, Fastballs to your bag"),
+		  "effect"      => proc{
+			pbPlayDecisionSE
+			itemHash = [[:QUICKBALL, 999], [:POKEBALL, 999], [:GREATBALL, 999],
+			[:ULTRABALL, 999]]
+			for item, count in itemHash
+			  $PokemonBag.pbStoreItem(item, count - pbQuantity(item))
+			end
+		  }
+	})
+  ModMenuCommands.register("starterpackpkb",{
+      "parent"      => "starterpackballs",
+      "name"        => _INTL("Pokeball"),
+      "description" => _INTL("Adds Pokeballs to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:POKEBALL, 999 - pbQuantity(item))
+      }
+})
+  ModMenuCommands.register("starterpackgb",{
+      "parent"      => "starterpackballs",
+      "name"        => _INTL("Greatball"),
+      "description" => _INTL("Adds Pokeballs to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:GREATBALL, 999 - pbQuantity(item))
+      }
+})
+  ModMenuCommands.register("starterpackub",{
+      "parent"      => "starterpackballs",
+      "name"        => _INTL("Ultraball"),
+      "description" => _INTL("Adds Pokeballs to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:ULTRABALL, 999 - pbQuantity(item))
+      }
+})
+  ModMenuCommands.register("starterpackfb",{
+      "parent"      => "starterpackballs",
+      "name"        => _INTL("Quickball"),
+      "description" => _INTL("Adds Pokeballs to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:QUICKBALL, 999 - pbQuantity(item))
+      }
+})
+  ModMenuCommands.register("starterpackevo",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Evo Stones"),
+      "description" => _INTL("Adds Evo Stones to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        itemHash = [[:WATERSTONE, 10],
+        [:LEAFSTONE, 10], [:SUNSTONE, 10], [:MOONSTONE, 10], [:THUNDERSTONE, 10], [:FIRESTONE, 10],
+        [:DAWNSTONE, 10], [:SHINYSTONE, 10], [:MAGNETSTONE, 10], [:SOOTHEBELL, 10]]
+        for item, count in itemHash
+          $PokemonBag.pbStoreItem(item, count - pbQuantity(item))
+        end
+      }
+})
+  ModMenuCommands.register("starterpacksplicers",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Splicers"),
+      "description" => _INTL("Adds Splicers to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        $PokemonBag.pbStoreItem(:INFINITEREVERSERS, 1 - pbQuantity(item))
+        $PokemonBag.pbStoreItem(:INFINITESPLICERS, 1 - pbQuantity(item))
+      }
+})
+  ModMenuCommands.register("starterpackother",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Other"),
+      "description" => _INTL("Adds Repel, PPMax, Escaperope to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        pbPlayDecisionSE
+        itemHash = [[:MAXREPEL, 999], [:ESCAPEROPE, 100], [:PPMAX, 10]]
+        for item, count in itemHash
+          $PokemonBag.pbStoreItem(item, count - pbQuantity(item))
+        end
+      }
+})
+  ModMenuCommands.register("starterpackhm",{
+      "parent"      => "starterpack",
+      "name"        => _INTL("Key Items"),
+      "description" => _INTL("Adds Teleporter, Lantern, Itemfinder to your bag"),
+      "effect"      => proc{
+        pbPlayDecisionSE
+        itemHash = [[:TELEPORTER, 1], [:LANTERN, 1], [:ITEMFINDER, 1]]
         for item, count in itemHash
           $PokemonBag.pbStoreItem(item, count - pbQuantity(item))
         end
