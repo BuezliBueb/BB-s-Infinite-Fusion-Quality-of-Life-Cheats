@@ -36,7 +36,11 @@
   <li>Difficulty Hard sets the Game Difficulty to Hard (Currently working on it to make a difficulty selection here)</li>
 </ul>
 
+## Settings:
 
+<P>By Default, EXP Boost and 100% Catch Rate are set to off.</P>
+<P>Whenever you close and open your game, the settings will jump back to the default settings</P>
+<P>To change the default settings, open the file: Data/Scripts/998_mods/002_BB_ModMenu/006_Mods/001_Mod_Menu_Settings.rb with your Texteditor of choice (Windows Notepad for example) and change the setting from = false to = true</P>
 ## Installing/Uninstalling:
 <p>Just drag the Data folder into you Folder where Game.exe is located</p>
 <p>To Uninstall remove the files:</p>
